@@ -1,0 +1,429 @@
+/*!Обнуление*/
+* {
+   padding: 0;
+   margin: 0;
+   border: 0;
+}
+*,
+*:before,
+*:after {
+   -moz-box-sizing: border-box;
+   -webkit-box-sizing: border-box;
+   box-sizing: border-box;
+}
+:focus,
+:active {
+   outline: none;
+}
+a:focus,
+a:active {
+   outline: none;
+}
+nav,
+footer,
+header,
+aside {
+   display: block;
+}
+html,
+body {
+   height: 100%;
+   width: 100%;
+   font-size: 100%;
+   line-height: 1;
+   font-size: 14px;
+   -ms-text-size-adjust: 100%;
+   -moz-text-size-adjust: 100%;
+   -webkit-text-size-adjust: 100%;
+}
+input,
+button,
+textarea {
+   font-family: inherit;
+}
+input::-ms-clear {
+   display: none;
+}
+button {
+   cursor: pointer;
+}
+button::-moz-focus-inner {
+   padding: 0;
+   border: 0;
+}
+a,
+a:visited {
+   text-decoration: none;
+}
+a:hover {
+   text-decoration: none;
+}
+ul li {
+   list-style: none;
+}
+img {
+   vertical-align: top;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   font-size: inherit;
+   font-weight: inherit;
+}
+/*!---------------------О-Б-Н-У-Л-Е-Н-И-Е---------------------------*/
+
+/* !==============================================================header */
+.wrapper {
+   height: 100%;
+}
+.lock {
+   overflow: hidden;
+}
+.header {
+   position: relative;
+   width: 100%;
+   top: 0;
+   left: 0;
+   z-index: 50;
+   height: 100vh;
+   background: url(../img/header/logo3.jpg) center/cover no-repeat fixed;
+}
+.header__burger {
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+   right: 30px;
+   width: 40px;
+   height: 30px;
+   display: none;
+   cursor: pointer;
+   /* border: 2px solid red; */
+}
+.header__burger-span {
+   /* position: relative; */
+   margin-top: 13px;
+   display: block;
+   width: 100%;
+   height: 4px;
+   background-color: rgb(255, 196, 0);
+}
+.header__burger-span:before {
+   content: "";
+   position: absolute;
+   display: block;
+   width: 100%;
+   height: 4px;
+   top: 0;
+   background-color: rgb(255, 196, 0);
+   transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
+}
+.header__burger-span:after {
+   content: "";
+   position: absolute;
+   display: block;
+   width: 100%;
+   height: 4px;
+   bottom: 0;
+   background-color: rgb(255, 196, 0);
+   transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
+}
+.header__burger.active .header__burger-span{
+   background-color: transparent;
+   transition: 0.3s;
+}
+.header__burger.active .header__burger-span:after{
+   transform: rotate(45deg);   
+   bottom: 13px;
+}
+.header__burger.active .header__burger-span:before{
+   transform: rotate(-45deg);  
+   top: 13px;
+}
+.container {
+   max-width: 2200px;
+   padding: 0 30px;
+   margin: 0 auto;
+}
+.header__menu {
+   height: 100px;
+   position: fixed;
+   width: 100%;
+   background-color: #050505;   
+}
+.header__list {
+   height: 100px;
+   display: flex;
+   align-items: center;
+   justify-content: space-around;
+   background-color: #050505;
+   transition: 0.4s;
+}
+.header__list.active{
+   margin-left: 0;
+   transition: 0.4s;
+}
+.header__item {
+   position: relative;   
+}
+
+.header__item:after {
+   content: "";
+   position: absolute;
+   left: 0;
+   top: 100%;
+   width: 100%;
+   height: 3px;
+   background-color: rgb(255, 196, 0);
+   opacity: 0;
+}
+.header__item:hover:after {
+   opacity: 1;
+   transition: 0.3s;
+}
+.header__item a {
+   font-size: 50px;
+   font-family: "Caveat", cursive;
+   font-weight: 700;
+   /* font-family: 'Lobster', cursive; */
+   /* font-family: 'Marck Script', cursive; */
+   /* font-family: 'Pacifico', cursive; */
+   color: rgb(255, 196, 0);
+}
+.header__tittle {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   height: 100vh;
+}
+h1 {
+   text-align: center;
+   font-size: calc(20px + 120 * (100vw / 2200));
+   /* font-family: "Lobster", cursive; */
+   font-family: "Caveat", cursive;
+   font-weight: 700;
+   color: rgb(255, 196, 0);
+}
+.header__subtittle {
+   margin-top: 30px;
+   text-align: center;
+   color: rgb(255, 196, 0);
+   font-family: "Caveat", cursive;
+   font-size: calc(12px + 40 * (100vw / 2200));
+}
+
+
+/* !=========================================================content */
+
+.section__content {
+   background-color: #111;
+   /* padding: 100px; */
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-wrap: wrap;
+   background: url(../img/header/logo3.jpg) center/cover no-repeat fixed;
+   position: relative;
+   /* width: 100vw; */
+   /* height: 100vh; */
+}
+.section__content-row {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+}
+.section__content-tyumen {
+   position: relative;
+   background: url(../img/content/tyumen.jpg) center/cover no-repeat;
+   height: 400px;
+   width: 400px;
+   /* width: 25vw; */
+   /* height: 100vh; */
+   /* box-shadow: 10px 16px 10px #666; */
+   z-index: 1;
+}
+.section__content-tyumen-absolute,
+.section__content-travels-absolute,
+.section__content-house-absolute,
+.section__content-wedding-absolute {
+   position: absolute;   
+   width: 100%;
+   height: 100%;
+   background-color: rgba(102, 102, 102, 0.651);
+   opacity: 0;
+   z-index: -1;
+}
+.section__content-tyumen:hover .section__content-tyumen-absolute {
+   opacity: 1;
+   transition: 0.3s;
+}
+.section__content-travels:hover .section__content-travels-absolute {
+   opacity: 1;
+   transition: 0.3s;
+}
+.section__content-house:hover .section__content-house-absolute {
+   opacity: 1;
+   transition: 0.3s;
+}
+.section__content-wedding:hover .section__content-wedding-absolute {
+   opacity: 1;
+   transition: 0.3s;
+}
+.section__content-travels {
+   position: relative;
+   /* margin: 50px; */
+   height: 400px;
+   width: 400px;
+   /* width: 25vw; */
+   /* height: 100vh; */
+   background: url(../img/content/travels.jpg) center/cover no-repeat;
+   /* box-shadow: 10px 16px 10px #666; */
+   z-index: 1;
+}
+.section__content-house {
+   position: relative;
+   /* margin: 50px; */
+   height: 400px;
+   width: 400px;
+   /* width: 25vw; */
+   /* height: 100vh; */
+   /* box-shadow: 10px 16px 10px rgb(10, 10, 10); */
+   z-index: 1;
+   background: url(../img/content/аня.jpg) center/cover no-repeat;
+   /* border-image: url(/img/Без\ названия.jpg) 60 round round; */
+}
+.section__content-wedding {
+   position: relative;
+   /* margin: 50px; */
+   height: 400px;
+   width: 400px;
+   /* width: 25vw; */
+   /* height: 100vh; */
+   background: url(../img/content/свадьба.jpg) center/cover no-repeat;
+   /* box-shadow: 10px 16px 10px #666; */
+   z-index: 1;
+}
+h2 {
+   font-family: "Caveat", cursive;
+   width: 100%;
+   height: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   position: absolute;
+   cursor: pointer;
+   font-size: calc(25px + 55 * (100vw / 2200));
+   color: rgb(255, 196, 0);
+}
+
+/*?=======================4096х1980=================================*/
+@media (max-width: 1920px) {
+}
+/*===============================================================*/
+@media (max-width: 1600px) {
+}
+/*===============================================================*/
+@media (max-width: 1440px) {
+}
+/*===============================================================*/
+@media (max-width: 1366px) {
+}
+/*===============================================================*/
+@media (max-width: 1280px) {
+}
+/*===== 992px - 1200px ========BOOTSTRAP=========================*/
+@media (max-width: 1200px) {
+}
+/*=============================BOOTSTRAP-C=======================*/
+@media (max-width: 1140px) {
+   .header__menu{
+      height: 70px;
+   }
+   .header__list {
+      overflow: auto;
+      height: 100vh;
+      flex-direction: column;
+      background-color: #050505;
+      margin-left: 150%;
+      padding: 30px 0;
+   }
+   .header__burger {
+      display: block;
+   }
+   .header__item a{
+      font-size: 30px;
+   }
+}
+/*===============================================================*/
+@media (max-width: 1080px) {
+}
+/*===============================================================*/
+@media (max-width: 1024px) {
+}
+/*======= 768px - 992px =======BOOTSTRAP=========================*/
+@media (max-width: 992px) {
+}
+/*=============================BOOTSTRAP-C=========================*/
+@media (max-width: 960px) {
+}
+/*===============================================================*/
+@media (max-width: 900px) {
+}
+/*===============================================================*/
+@media (max-width: 823px) {
+}
+/*===============================================================*/
+@media (max-width: 812px) {
+}
+/*===============================================================*/
+@media (max-width: 800px) {
+}
+/*======= 576px - 768px========BOOTSTRAP========================*/
+@media (max-width: 768px) {
+}
+
+/*===============================================================*/
+@media (max-width: 736px) {
+}
+/*=============================BOOTSTRAP-C=========================*/
+@media (max-width: 720px) {
+}
+/*===============================================================*/
+@media (max-width: 667px) {
+}
+/*===============================================================*/
+@media (max-width: 640px) {
+}
+/*======= 0px - 576px ========BOOTSTRAP========================*/
+@media (max-width: 576px) {
+}
+/*===============================================================*/
+@media (max-width: 568px) {
+}
+/*=============================BOOTSTRAP-C=======================*/
+@media (max-width: 540px) {
+}
+/*===============================================================*/
+@media (max-width: 534px) {
+}
+/*===============================================================*/
+@media (max-width: 480px) {
+   .section__content-item {
+      width: 300px;
+      height: 300px;
+   }
+}
+/*===============================================================*/
+@media (max-width: 414px) {
+}
+/*===============================================================*/
+@media (max-width: 375px) {
+}
+/*===============================================================*/
+@media (max-width: 360px) {
+}
+/*===============================================================*/
+@media (max-width: 320px) {
+}
